@@ -94,6 +94,18 @@ inputs:
     description: > 
         (string) Choose an option to automatically group new findings by the chosen option. Available values: component_name, component_name+component_version, file_path. Default value: component_name+component_version
     default: 'component_name+component_version'
+  product_name:
+    description: > product name
+        (string) 
+    default: ''
+  engagement_name:
+    description: > 
+        (string) engagement name
+    default: ''
+  test_title:
+    description: > 
+        (string) test_title
+    default: ''    
 outputs:
   response:
     description: 'DefectDojo publish result'
@@ -129,6 +141,9 @@ runs:
         INPUT_SONARQUBE_CONFIG: ${{ inputs.sonarqube_config }}
         INPUT_COBALTIO_CONFIG: ${{ inputs.cobaltio_config }}
         INPUT_GROUP_BY: ${{ inputs.group_by }}
+        PRODUCT_NAME: ${{ inputs.product_name }}
+        ENGAGEMENT_NAME: ${{ inputs.engagement_name }}
+        TEST_TITLE: ${{ inputs.test_title }}
 
 branding:
   icon: 'target'
