@@ -115,6 +115,11 @@ then
     ARGS+="-F 'file=@\"$INPUT_FILE\"' "
 fi
 
+ARGS+="-F 'product_name=Milofi' "
+ARGS+="-F 'engagement_name=main' "
+ARGS+="-F 'test_title=semgrep' "
+
+echo $ARGS | xargs echo curl -X POST "$INPUT_DEFECTDOJO_URL$INPUT_DEFECTDOJO_ENDPOINT" -H "Authorization: Token $INPUT_TOKEN" -H "accept: application/json" -H  "Content-Type: multipart/form-data"
 response=$(echo $ARGS | xargs curl -X POST "$INPUT_DEFECTDOJO_URL$INPUT_DEFECTDOJO_ENDPOINT" -H "Authorization: Token $INPUT_TOKEN" -H "accept: application/json" -H  "Content-Type: multipart/form-data")
 echo "::set-output name=response::$( echo $response)"
 
