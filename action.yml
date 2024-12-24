@@ -105,7 +105,12 @@ inputs:
   test_title:
     description: > 
         (string) test_title
-    default: ''    
+    default: ''   
+  auto_create_context:
+    description: > 
+        (string) auto_create_context 
+    default: ''
+    
 outputs:
   response:
     description: 'DefectDojo publish result'
@@ -144,6 +149,7 @@ runs:
         PRODUCT_NAME: ${{ inputs.product_name }}
         ENGAGEMENT_NAME: ${{ inputs.engagement_name }}
         TEST_TITLE: ${{ inputs.test_title }}
+        AUTO_CREATE_CONTEXT: ${{ inputs.auto_create_context }}
 
 branding:
   icon: 'target'
