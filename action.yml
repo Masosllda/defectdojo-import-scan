@@ -95,8 +95,8 @@ inputs:
         (string) Choose an option to automatically group new findings by the chosen option. Available values: component_name, component_name+component_version, file_path. Default value: component_name+component_version
     default: 'component_name+component_version'
   product_name:
-    description: > product name
-        (string) 
+    description: > 
+        (string) product name
     default: ''
   engagement_name:
     description: > 
